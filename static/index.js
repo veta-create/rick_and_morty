@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let prev = null;
   const cards = document.querySelectorAll('.card')
   const main = document.querySelector('.main')
-  const next = document.querySelector('.next')
-  const back = document.querySelector('.back')
+  const next = document.querySelector('.forward')
+  const back = document.querySelector('.previous')
 
   function sendRequest(method, url) {
     return fetch(url).then(response => {
@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCard(url)
 
   document.addEventListener('click', function(e) {
-    if(e.target.className == 'next') {
+    if(e.target.className == 'forward') {
 
       renderCard(url)
-    } else if(e.target.className == 'back') {
+    } else if(e.target.className == 'previous') {
       renderCard(prev)
     }
      
